@@ -7,7 +7,7 @@
 //
 
 #import "GameController.h"
-
+#import "Dice.h"
 #define MAX_ROLL 5
 
 //private property
@@ -80,19 +80,24 @@
             // 2. change the held property of the die
             [die held];
         }
-}
+    }
 }
 
 -(void) displayScore{
     // 1. check if the game is over (rollCount)
     // - game over
     // - print game over and currentDeck and the score (the sum of faceValues)
+    int sum = 0;
+    for (Dice *die in _displayDice){
+        sum = sum + die.faceValue;
+    }
     if (rollCount == 0){
-        NSLog(@"Game Over");
+        NSLog(@"Game Over. Score %d", sum);
         [self displayCurrentDeck];
     }else{
     // 2. not over
     // - print the current deck and the score (the sume of faceValues)
+         NSLog(@"Score %d", sum);
         [self displayCurrentDeck];
 }
 }
