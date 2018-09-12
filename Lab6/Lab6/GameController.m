@@ -86,14 +86,14 @@
 -(void) displayScore{
     // 1. check if the game is over (rollCount)
     // - game over
-    // - print game over and currentDeck and the score (the sume of faceValues)
+    // - print game over and currentDeck and the score (the sum of faceValues)
     if (rollCount == 0){
         NSLog(@"Game Over");
-        NSLog(@"%@", displayCurrentDeck);
+        [self displayCurrentDeck];
     }else{
     // 2. not over
     // - print the current deck and the score (the sume of faceValues)
-//    return [NSString stringWithFormat: @"@Score: %d right, %d wrong --- percent %f" , _right, _wrong, percent];
+        [self displayCurrentDeck];
 }
 }
 
